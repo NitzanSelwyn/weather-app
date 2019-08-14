@@ -61,3 +61,5 @@ typings/
 .next
 
 SERVER/congfig.js
+
+SERVER/config\.js
