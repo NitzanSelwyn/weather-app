@@ -6,6 +6,6 @@ const router = express.Router();
 
 router.use(bodyParser.json());
 
-router.get("/GetWeatherNow", watherController.GetWeatherNow);
+router.post("/GetWeatherNow", watherController.GetWeatherNow);
 
 module.exports = router;
