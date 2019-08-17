@@ -12,6 +12,7 @@ export class AppComponent {
   currLng;
 
   data: any;
+  currentweather;
 
   constructor(private serive: GetDataService) {}
 
@@ -26,8 +27,9 @@ export class AppComponent {
         this.currLng = position.coords.longitude;
 
         this.serive.GetBasicData(this.currLng, this.currLat).subscribe(data => {
-          // this.data = data;
           console.log(data);
+          this.currentweather = data["temperature"];
+          console.log(this.currentweather);
         });
       });
     } else {

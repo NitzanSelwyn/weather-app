@@ -9,7 +9,6 @@ import { isNull } from "util";
 export class GetDataService {
   constructor(private http: HttpClient) {}
   headers;
-
   ngOnInit() {
     this.headers = new HttpHeaders();
     this.headers.append("Access-Control-Allow-Origin", "http://localhost:3000");
@@ -26,7 +25,7 @@ export class GetDataService {
 
   GetBasicData(currLng, currLat): Observable<any> {
     return this.http.post<any>(
-      "http://localhost:3000/api/weather/GetWeatherNow",
+      "https://nitzanselwyn-weather.herokuapp.com/api/weather/GetWeatherNow",
       {
         currLat,
         currLng
